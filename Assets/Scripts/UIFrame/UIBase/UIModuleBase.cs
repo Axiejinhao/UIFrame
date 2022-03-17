@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UIFrame;
+using Locolization;
 
 namespace UIFrame
 {
@@ -72,7 +73,6 @@ namespace UIFrame
 
         #endregion
 
-
         #region OnState
 
         /// <summary>
@@ -81,6 +81,7 @@ namespace UIFrame
         public virtual void OnEnter()
         {
             _canvasGroup.blocksRaycasts = true;
+            LocalizationManager.Instance.LocalizationInit();
         }
 
         /// <summary>

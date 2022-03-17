@@ -22,6 +22,15 @@
     <RootNamespace>
     </RootNamespace>
     <LangVersion>4</LangVersion>
+    <NoConfig>true</NoConfig>
+    <NoStdLib>true</NoStdLib>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
+    <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
+    <_TargetFrameworkDirectories>non_empty_path_generated_by_rider_editor_plugin</_TargetFrameworkDirectories>
+    <_FullFrameworkReferenceAssemblyPaths>non_empty_path_generated_by_rider_editor_plugin</_FullFrameworkReferenceAssemblyPaths>
+    <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -44,14 +53,6 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="mscorlib" />
-    <Reference Include="System" />
-    <Reference Include="System.XML" />
-    <Reference Include="System.Core" />
-    <Reference Include="Boo.Lang" />
-    <Reference Include="UnityScript.Lang" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEditor">
       <HintPath>D:/Unity/Unity2017.4.20f2/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
@@ -241,6 +242,33 @@
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/21030/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>D:\Unity\Unity2017.4.20f2\Editor\Data\MonoBleedingEdge\lib\mono\unity\mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>D:\Unity\Unity2017.4.20f2\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>D:\Unity\Unity2017.4.20f2\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>D:\Unity\Unity2017.4.20f2\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Boo.Lang">
+      <HintPath>D:\Unity\Unity2017.4.20f2\Editor\Data\MonoBleedingEdge\lib\mono\unity\Boo.Lang.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityScript.Lang">
+      <HintPath>D:\Unity\Unity2017.4.20f2\Editor\Data\MonoBleedingEdge\lib\mono\unity\UnityScript.Lang.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>D:\Unity\Unity2017.4.20f2\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>D:\Unity\Unity2017.4.20f2\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>D:\Unity\Unity2017.4.20f2\Editor\Data\MonoBleedingEdge\lib\mono\unity\mscorlib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\DOTween_1_2_632\DOTween\Modules\DOTweenModuleAudio.cs" />
@@ -252,8 +280,11 @@
     <Compile Include="Assets\DOTween_1_2_632\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
     <Compile Include="Assets\DOTween_1_2_632\DOTween\Modules\DOTweenModuleUtils.cs" />
     <Compile Include="Assets\Scripts\Facade\GameFacade.cs" />
+    <Compile Include="Assets\Scripts\Locolization\LocalizationManager.cs" />
+    <Compile Include="Assets\Scripts\Locolization\LocalizationText.cs" />
     <Compile Include="Assets\Scripts\UIFrame\Managers\UIManager.cs" />
     <Compile Include="Assets\Scripts\UIFrame\Managers\UITypeManager.cs" />
+    <Compile Include="Assets\Scripts\UIFrame\Models\JsonLocalizationModel.cs" />
     <Compile Include="Assets\Scripts\UIFrame\Models\JsonPanelsModel.cs" />
     <Compile Include="Assets\Scripts\UIFrame\Models\UIType.cs" />
     <Compile Include="Assets\Scripts\UIFrame\UIBase\UIControllerBase.cs" />
@@ -270,17 +301,17 @@
     <Compile Include="Assets\Scripts\UIFrame\Utility\JsonDataManager.cs" />
     <Compile Include="Assets\Scripts\UIFrame\Utility\Singleton.cs" />
     <Compile Include="Assets\Scripts\UIFrame\Utility\SystemDefine.cs" />
-    <Compile Include="Assets\Scripts\UserLogic\UIControllers\TaskPanelController.cs" />
-    <Compile Include="Assets\Scripts\UserLogic\UIControllers\SystemPanelController.cs" />
-    <Compile Include="Assets\Scripts\UserLogic\UIControllers\NormalPanelController.cs" />
-    <Compile Include="Assets\Scripts\UserLogic\UIControllers\HeroMsgPanelController.cs" />
-    <Compile Include="Assets\Scripts\UserLogic\UIControllers\HeroEquipPanelController.cs" />
     <Compile Include="Assets\Scripts\UserLogic\UIControllers\BagPanelController.cs" />
+    <Compile Include="Assets\Scripts\UserLogic\UIControllers\HeroEquipPanelController.cs" />
+    <Compile Include="Assets\Scripts\UserLogic\UIControllers\HeroMsgPanelController.cs" />
     <Compile Include="Assets\Scripts\UserLogic\UIControllers\MainPanelController.cs" />
-    <Compile Include="Assets\Scripts\UserLogic\UIModules\MainPanelModule.cs" />
+    <Compile Include="Assets\Scripts\UserLogic\UIControllers\NormalPanelController.cs" />
+    <Compile Include="Assets\Scripts\UserLogic\UIControllers\SystemPanelController.cs" />
+    <Compile Include="Assets\Scripts\UserLogic\UIControllers\TaskPanelController.cs" />
     <Compile Include="Assets\Scripts\UserLogic\UIModules\BagPanelModule.cs" />
     <Compile Include="Assets\Scripts\UserLogic\UIModules\HeroEquipPanelModule.cs" />
     <Compile Include="Assets\Scripts\UserLogic\UIModules\HeroMsgPanelModule.cs" />
+    <Compile Include="Assets\Scripts\UserLogic\UIModules\MainPanelModule.cs" />
     <Compile Include="Assets\Scripts\UserLogic\UIModules\NormalPanelModule.cs" />
     <Compile Include="Assets\Scripts\UserLogic\UIModules\SystemPanelModule.cs" />
     <Compile Include="Assets\Scripts\UserLogic\UIModules\TaskPanelModule.cs" />
@@ -292,7 +323,6 @@
     <None Include="Assets\DOTween_1_2_632\DOTween\readme.txt" />
     <None Include="Assets\Images\005-number combo\number_font.fnt" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>

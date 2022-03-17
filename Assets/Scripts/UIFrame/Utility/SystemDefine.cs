@@ -9,6 +9,7 @@ namespace UIFrame
     {
         #region Configuration Path
         public const string PanelConfigPath = "Configuration/UIPanelConfig";
+        public const string LocalizationConfigPath = "Configuration/UILanguageTextConfig";
         #endregion
 
         #region Scene ID
