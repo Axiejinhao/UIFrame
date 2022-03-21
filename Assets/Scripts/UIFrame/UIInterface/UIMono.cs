@@ -106,5 +106,19 @@ namespace UIFrame
         }
 
         #endregion
+        
+        #region IRectTransform
+
+        public void SetParent(Transform parent)
+        {
+            transform.SetParent(parent);
+        }
+
+        public void SetParent(Transform parent, bool stayWorldPos)
+        {
+            transform.SetParent(parent,stayWorldPos);
+        }
+
+        #endregion
     }
 }

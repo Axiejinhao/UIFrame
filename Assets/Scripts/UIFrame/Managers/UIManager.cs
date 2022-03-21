@@ -115,7 +115,7 @@ namespace UIFrame
             UIType _uiType = UITypeManager.Instance.GetUIType(uiPanelName);
             //获取UIModuleBase
             UIModuleBase crtModuleBase = GetUIModule(_uiType);
-            if (uiModuleList.Contains(crtModuleBase))
+            if (!uiModuleList.Contains(crtModuleBase))
             {
                 uiModuleList.Add(crtModuleBase);
             }

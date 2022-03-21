@@ -91,6 +91,7 @@
     <Compile Include="Assets\Scripts\UIFrame\Models\JsonLocalizationModel.cs" />
     <Compile Include="Assets\Scripts\UIFrame\Models\JsonPanelsModel.cs" />
     <Compile Include="Assets\Scripts\UIFrame\Models\UIType.cs" />
+    <Compile Include="Assets\Scripts\UIFrame\MonoHelper.cs" />
     <Compile Include="Assets\Scripts\UIFrame\UIBase\UIControllerBase.cs" />
     <Compile Include="Assets\Scripts\UIFrame\UIBase\UIModuleBase.cs" />
     <Compile Include="Assets\Scripts\UIFrame\UIBase\UIWidgetBase.cs" />
