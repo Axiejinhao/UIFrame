@@ -11,6 +11,8 @@ namespace UIFrame
         private Dictionary<UIType, UIModuleBase> uiModules;
         //UI模块的栈存储
         private Stack<UIModuleBase> uiModuleStack;
+        //UI模块的列表存储
+        private List<UIModuleBase> uiModuleList;
         //管理当前场景的所有UI元件
         private Dictionary<string, Dictionary<string, UIWidgetBase>> uiWidgets;
         private Transform _canvas;
@@ -19,6 +21,7 @@ namespace UIFrame
         {
             uiModules = new Dictionary<UIType, UIModuleBase>();
             uiModuleStack = new Stack<UIModuleBase>();
+            uiModuleList = new List<UIModuleBase>();
             uiWidgets = new Dictionary<string, Dictionary<string, UIWidgetBase>>();
             _canvas = GameObject.FindWithTag(SystemDefine.CANVAS).transform;
         }
@@ -104,6 +107,24 @@ namespace UIFrame
 
         #endregion
 
+        #region UI Module List
+
+        public void ShowUI(string uiPanelName)
+        {
+            //获取UIType
+            UIType _uiType = UITypeManager.Instance.GetUIType(uiPanelName);
+            //获取UIModuleBase
+            UIModuleBase crtModuleBase = GetUIModule(_uiType);
+            if (uiModuleList.Contains(crtModuleBase))
+            {
+                uiModuleList.Add(crtModuleBase);
+            }
+            //新窗口执行Enter
+            crtModuleBase.OnEnter();
+        }
+
+        #endregion
+        
         #region UI uiWidgets Widgets->Module (Un)Register
 
         /// <summary>
