@@ -27,7 +27,20 @@ namespace UIFrame
         }
 
         #region UI Module GameObject
-
+        
+        /// <summary>
+        /// 通过名字获取模块
+        /// </summary>
+        /// <param name="uiPanelName"></param>
+        /// <returns></returns>
+        public UIModuleBase GetUIModuleByName(string uiPanelName)
+        {
+            //获取UIType
+            UIType _uiType = UITypeManager.Instance.GetUIType(uiPanelName);
+            //获取UIModuleBase
+            return GetUIModule(_uiType);
+        }
+        
         /// <summary>
         /// 通过UIType获取Type对应的游戏模块对象身上的UIModuleBase
         /// </summary>
