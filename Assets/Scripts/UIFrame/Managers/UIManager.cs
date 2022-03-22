@@ -106,7 +106,7 @@ namespace UIFrame
         /// </summary>
         public void PopUI()
         {
-            if (uiModuleStack.Count > 0)
+            if (uiModuleStack.Count > 1)
             {
                 //栈顶元素出栈
                 uiModuleStack.Pop().OnExit();
