@@ -81,6 +81,8 @@ namespace UIFrame
         public virtual void OnEnter()
         {
             _canvasGroup.blocksRaycasts = true;
+            //当前窗口显示在最前面
+            transform.SetSiblingIndex(transform.parent.childCount - 1);
             LocalizationManager.Instance.LocalizationInit();
         }
 
