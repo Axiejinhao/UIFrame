@@ -1,4 +1,4 @@
-﻿namespace UIFrame
+namespace UIFrame
 {
     public interface IGameObject
     {

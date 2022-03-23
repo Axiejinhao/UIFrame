@@ -97,6 +97,7 @@
     <Compile Include="Assets\Scripts\UIFrame\UIBase\UIModuleBase.cs" />
     <Compile Include="Assets\Scripts\UIFrame\UIBase\UIWidgetBase.cs" />
     <Compile Include="Assets\Scripts\UIFrame\UIInterface\IButton.cs" />
+    <Compile Include="Assets\Scripts\UIFrame\UIInterface\IGameObject.cs" />
     <Compile Include="Assets\Scripts\UIFrame\UIInterface\IImage.cs" />
     <Compile Include="Assets\Scripts\UIFrame\UIInterface\IInputField.cs" />
     <Compile Include="Assets\Scripts\UIFrame\UIInterface\IRawImage.cs" />

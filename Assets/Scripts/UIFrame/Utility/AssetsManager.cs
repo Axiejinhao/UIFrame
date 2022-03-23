@@ -11,7 +11,7 @@ namespace UIFrame
         //私有构造
         private AssetsManager()
         {
-
+            assetsCache = new Dictionary<string, Object>();
         }
 
         private Dictionary<string, Object> assetsCache = new Dictionary<string, Object>();
