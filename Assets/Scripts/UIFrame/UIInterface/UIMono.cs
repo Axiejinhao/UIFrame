@@ -9,7 +9,7 @@ namespace UIFrame
 {
     public class UIMono : MonoBehaviour,
         IRectTransform, IText, IInputField,
-        IImage, IRawImage, IButton
+        IImage, IRawImage, IButton, IGameObject
     {
         #region Component
 
@@ -117,6 +117,15 @@ namespace UIFrame
         public void SetParent(Transform parent, bool stayWorldPos)
         {
             transform.SetParent(parent,stayWorldPos);
+        }
+
+        #endregion
+
+        #region IGameObject
+
+        public void SetGameObjectActive(bool active)
+        {
+            gameObject.SetActive(active);
         }
 
         #endregion

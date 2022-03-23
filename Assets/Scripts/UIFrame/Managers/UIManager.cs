@@ -220,5 +220,35 @@ namespace UIFrame
         }
 
         #endregion
+        
+        #region Dynamic Widget Instantiate
+        
+        /// <summary>
+        /// 根据动态元件名称创建元件
+        /// </summary>
+        /// <param name="widgetName"></param>
+        /// <returns></returns>
+        public GameObject CreateDynamicWidget(string widgetName)
+        {
+            //获取元件的资源路径
+            string widgetPath = JsonDataManager.Instance.FindWidgetPath(widgetName);
+            //获取预设体
+            GameObject prefab = AssetsManager.Instance.GetAsset(widgetPath) as GameObject;
+            return GameObject.Instantiate(prefab);
+        }
+        
+        /// <summary>
+        /// 根据动态元件名称创建元件,并设置父物体
+        /// </summary>
+        /// <param name="widgetName"></param>
+        /// <returns></returns>
+        public GameObject CreateDynamicWidget(string widgetName, Transform parent, bool worldPosStays)
+        {
+            GameObject gameObject = CreateDynamicWidget(widgetName);
+            gameObject.transform.SetParent(parent,worldPosStays);
+            return gameObject;
+        }
+
+        #endregion
     }
 }
