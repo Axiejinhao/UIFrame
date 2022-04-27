@@ -10,6 +10,7 @@ namespace UIFrame
     public class UIMono : MonoBehaviour,
         IRectTransform, IText, IInputField,
         IImage, IRawImage, IButton, IGameObject
+        //ITextMeshProUGUI
     {
         #region Component
 
@@ -19,6 +20,7 @@ namespace UIFrame
         private Button _button;
         private Text _text;
         private InputField _inputField;
+        // private TextMeshProUGUI _textMeshProUGUI;
 
         #endregion
 
@@ -129,5 +131,24 @@ namespace UIFrame
         }
 
         #endregion
+        
+        // #region ITextMeshProUGUI
+        //
+        // public void SetTextMeshProUGUIText(string text)
+        // {
+        //     _textMeshProUGUI.text = text;
+        // }
+        //
+        // public string GetTextMeshProUGUIText()
+        // {
+        //     return _textMeshProUGUI.text;
+        // }
+        //
+        // public void SetTextMeshProUGUIColor(Color color)
+        // {
+        //     _textMeshProUGUI.color = color;
+        // }
+        //
+        // #endregion
     }
 }

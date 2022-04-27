@@ -103,6 +103,7 @@
     <Compile Include="Assets\Scripts\UIFrame\UIInterface\IRawImage.cs" />
     <Compile Include="Assets\Scripts\UIFrame\UIInterface\IRectTransform.cs" />
     <Compile Include="Assets\Scripts\UIFrame\UIInterface\IText.cs" />
+    <Compile Include="Assets\Scripts\UIFrame\UIInterface\ITextMeshProUGUI.cs" />
     <Compile Include="Assets\Scripts\UIFrame\UIInterface\UIMono.cs" />
     <Compile Include="Assets\Scripts\UIFrame\Utility\AssetsManager.cs" />
     <Compile Include="Assets\Scripts\UIFrame\Utility\JsonDataManager.cs" />
