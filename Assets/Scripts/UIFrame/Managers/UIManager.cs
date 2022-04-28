@@ -33,10 +33,10 @@ namespace UIFrame
         /// </summary>
         /// <param name="uiPanelName"></param>
         /// <returns></returns>
-        public UIModuleBase GetUIModuleByName(string uiPanelName)
+        public UIModuleBase GetUIModuleByName(string uiPanelName, int sceneID = (int)SystemDefine.SceneID.MainScene)
         {
             //获取UIType
-            UIType _uiType = UITypeManager.Instance.GetUIType(uiPanelName);
+            UIType _uiType = UITypeManager.Instance.GetUIType(uiPanelName,sceneID);
             //获取UIModuleBase
             return GetUIModule(_uiType);
         }
@@ -84,10 +84,10 @@ namespace UIFrame
         /// 通过PanelName获取模块对象,并压栈
         /// </summary>
         /// <param name="uiPanelName"></param>
-        public void PushUI(string uiPanelName)
+        public void PushUI(string uiPanelName, int sceneID = (int)SystemDefine.SceneID.MainScene)
         {
             //获取UIType
-            UIType _uiType = UITypeManager.Instance.GetUIType(uiPanelName);
+            UIType _uiType = UITypeManager.Instance.GetUIType(uiPanelName, sceneID);
             //获取UIModuleBase
             UIModuleBase crtModuleBase = GetUIModule(_uiType);
 
@@ -123,10 +123,10 @@ namespace UIFrame
 
         #region UI Module List
 
-        public void ShowUI(string uiPanelName)
+        public void ShowUI(string uiPanelName, int sceneID = (int)SystemDefine.SceneID.MainScene)
         {
             //获取UIType
-            UIType _uiType = UITypeManager.Instance.GetUIType(uiPanelName);
+            UIType _uiType = UITypeManager.Instance.GetUIType(uiPanelName, sceneID);
             //获取UIModuleBase
             UIModuleBase crtModuleBase = GetUIModule(_uiType);
             if (!uiModuleList.Contains(crtModuleBase))
@@ -229,10 +229,10 @@ namespace UIFrame
         /// </summary>
         /// <param name="widgetName"></param>
         /// <returns></returns>
-        public GameObject CreateDynamicWidget(string widgetName)
+        public GameObject CreateDynamicWidget(string widgetName, int sceneID = (int)SystemDefine.SceneID.MainScene)
         {
             //获取元件的资源路径
-            string widgetPath = JsonDataManager.Instance.FindWidgetPath(widgetName);
+            string widgetPath = JsonDataManager.Instance.FindWidgetPath(widgetName, sceneID);
             //获取预设体
             GameObject prefab = AssetsManager.Instance.GetAsset(widgetPath) as GameObject;
             return GameObject.Instantiate(prefab);
@@ -243,9 +243,9 @@ namespace UIFrame
         /// </summary>
         /// <param name="widgetName"></param>
         /// <returns></returns>
-        public GameObject CreateDynamicWidget(string widgetName, Transform parent, bool worldPosStays)
+        public GameObject CreateDynamicWidget(string widgetName, Transform parent, bool worldPosStays, int sceneID = (int)SystemDefine.SceneID.MainScene)
         {
-            GameObject gameObject = CreateDynamicWidget(widgetName);
+            GameObject gameObject = CreateDynamicWidget(widgetName, sceneID);
             gameObject.transform.SetParent(parent,worldPosStays);
             return gameObject;
         }

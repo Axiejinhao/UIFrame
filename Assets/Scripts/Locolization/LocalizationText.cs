@@ -16,7 +16,7 @@ namespace Locolization
         private void Awake()
         {
             _text = GetComponent<Text>();
-            languageTexts = JsonDataManager.Instance.FindTextLocalization(this.name);
+            languageTexts = JsonDataManager.Instance.FindTextLocalization(this.name, (int)SystemDefine.SceneID.MainScene);
         }
 
         private void Start()

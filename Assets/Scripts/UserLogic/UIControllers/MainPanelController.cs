@@ -20,20 +20,20 @@ namespace UserLogic
 
             crtModule.FindCurrentModuleWidget("HeaderMask_S").AddOnClickListener(() =>
             {
-                UIManager.Instance.PushUI(SystemDefine.HEROMSGPANEL);
+                UIManager.Instance.PushUI(SystemDefine.HEROMSGPANEL, (int)SystemDefine.SceneID.MainScene);
             });
             crtModule.FindCurrentModuleWidget("TaskButton_F").AddOnClickListener(() =>
             {
-                UIManager.Instance.PushUI(SystemDefine.TASKPANEL);
+                UIManager.Instance.PushUI(SystemDefine.TASKPANEL, (int)SystemDefine.SceneID.MainScene);
             });
             crtModule.FindCurrentModuleWidget("SystemButton_F").AddOnClickListener(() =>
             {
-                UIManager.Instance.PushUI(SystemDefine.SYSTEMPANEL);
+                UIManager.Instance.PushUI(SystemDefine.SYSTEMPANEL, (int)SystemDefine.SceneID.MainScene);
             });
             crtModule.FindCurrentModuleWidget("BagButton_F").AddOnClickListener(() =>
             {
-                UIManager.Instance.PushUI(SystemDefine.HEROEQUIPPANEL);
-                UIManager.Instance.PushUI(SystemDefine.BAGPANEL);
+                UIManager.Instance.PushUI(SystemDefine.HEROEQUIPPANEL, (int)SystemDefine.SceneID.MainScene);
+                UIManager.Instance.PushUI(SystemDefine.BAGPANEL, (int)SystemDefine.SceneID.MainScene);
             });
 
             crtModule.FindCurrentModuleWidget("Chinese_F").AddOnClickListener(() =>

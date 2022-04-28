@@ -22,7 +22,7 @@ namespace UserLogic
 
                 crtModule.FindCurrentModuleWidget("Goods" + i.ToString() + "_F").AddOnClickListener(() =>
                 {
-                    UIManager.Instance.PushUI(SystemDefine.NORMALWINDOWPANEL);
+                    UIManager.Instance.PushUI(SystemDefine.NORMALWINDOWPANEL, (int)SystemDefine.SceneID.MainScene);
                     Sprite spr = widgetBase.GetSprite();
                     UIManager.Instance.FindWidget(SystemDefine.NORMALWINDOWPANEL,
                         "Image_S").SetSprite(spr);

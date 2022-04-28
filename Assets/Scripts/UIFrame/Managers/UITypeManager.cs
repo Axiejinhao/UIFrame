@@ -17,14 +17,14 @@ namespace UIFrame
         /// <summary>
         /// 通过UIPanelName名称,获取其路径
         /// </summary>
-        public UIType GetUIType(string uiPanelName)
+        public UIType GetUIType(string uiPanelName, int sceneID = (int)SystemDefine.SceneID.MainScene)
         {
             //返回的UIType
             UIType uiType = null;
             if (!_uiTypes.TryGetValue(uiPanelName, out uiType))
             {
                 //新建一个UIType
-                uiType = new UIType(JsonDataManager.Instance.FindPanelPath(uiPanelName));
+                uiType = new UIType(JsonDataManager.Instance.FindPanelPath(uiPanelName,sceneID));
                 _uiTypes.Add(uiPanelName, uiType);
             }
             return uiType;

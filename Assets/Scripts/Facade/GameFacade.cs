@@ -11,7 +11,7 @@ namespace Facade
         private void Start()
         {
             //游戏启动
-            UIManager.Instance.PushUI("MainPanel");
+            UIManager.Instance.PushUI("MainPanel", (int)SystemDefine.SceneID.MainScene);
         }
 
     }
